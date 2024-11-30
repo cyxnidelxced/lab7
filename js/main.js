@@ -64,3 +64,45 @@ async function fetchTrivia() {
         document.getElementById('show-answer-btn').style.display = 'none';
     }
 }
+
+// Function to display the next trivia question
+function displayNextTriviaQuestion() {
+    if (triviaData.length === 0) {
+        console.log('No trivia questions available');
+        return;
+    }
+
+    if (currentTriviaIndex < triviaData.length) {
+        const triviaQuestionElement = document.getElementById('trivia-question');
+        const currentQuestion = triviaData[currentTriviaIndex];
+
+        triviaQuestionElement.innerHTML = `
+            <strong>Question:</strong> ${currentQuestion.question}
+        `;
+
+        // Show the "Show Answer" button
+        document.getElementById('show-answer-btn').style.display = 'inline-block';
+        document.getElementById('show-answer-btn').dataset.answer = currentQuestion.correct_answer;
+
+        // Hide the answer initially
+        document.getElementById('show-answer-btn').style.display = 'inline-block';
+    } else {
+        document.getElementById('trivia-question').innerHTML = 'No more trivia questions available.';
+    }
+}
+
+// Function to show the answer for the trivia question
+function showAnswer() {
+    const answer = document.getElementById('show-answer-btn').dataset.answer;
+    const triviaQuestionElement = document.getElementById('trivia-question');
+
+    triviaQuestionElement.innerHTML += `
+        <br><strong>Answer:</strong> ${answer}
+    `;
+
+    // Hide the button after showing the answer
+    document.getElementById('show-answer-btn').style.display = 'none';
+
+    // Increment the trivia index to show the next question on next button click
+    currentTriviaIndex++;
+}
