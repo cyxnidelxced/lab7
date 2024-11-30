@@ -33,3 +33,34 @@ async function fetchFacts() {
     }
 }
 
+// Function to display Random Facts
+function displayFacts(fact) {
+    const factsList = document.getElementById('facts-list');
+    factsList.innerHTML = '';  // Clear the existing facts
+
+    // Add a new fact to the list
+    const factItem = document.createElement('li');
+    factItem.textContent = fact.text;
+    factsList.appendChild(factItem);
+}
+
+// Function to fetch Trivia Questions
+async function fetchTrivia() {
+    try {
+        const response = await fetch(triviaApiUrl);
+        if (!response.ok) {
+            throw new Error('Failed to fetch trivia questions');
+        }
+        const data = await response.json();
+        console.log('Trivia Questions:', data);
+        triviaData = data.results; // Store trivia questions in a global variable
+        currentTriviaIndex = 0; // Reset trivia index to 0 for a fresh start
+        displayNextTriviaQuestion(); // Display the first trivia question
+    } catch (error) {
+        console.error('Error fetching Trivia Questions:', error);
+        document.getElementById('trivia-question').innerHTML = '<p>Error loading. Please wait for a while and then press the load button.</p>';
+
+        // Hide the "Show Answer" button in case of an error
+        document.getElementById('show-answer-btn').style.display = 'none';
+    }
+}
