@@ -35,3 +35,17 @@ body {
     align-items: center;
     justify-content: flex-start; 
 }
+
+/* Header */
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #ff4e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ff6a00;
+    margin-bottom: 20px;
+}
