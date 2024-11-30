@@ -10,3 +10,9 @@ document.getElementById('show-answer-btn').addEventListener('click', showAnswer)
 
 let triviaData = [];
 let currentTriviaIndex = 0;
+
+// Function to load both Random Facts and Trivia Questions
+function loadData() {
+    fetchFacts();
+    fetchTrivia();
+}
