@@ -1,6 +1,6 @@
 // API URLs
 const factsApiUrl = 'https://uselessfacts.jsph.pl/api/v2/facts/random';
-const triviaApiUrl = 'https://opentdb.com/api.php?amount=10';
+const triviaApiUrl = 'https://opentdb.com/api.php?amount=50';
 
 // Button to trigger loading of facts and trivia
 document.getElementById('load-button').addEventListener('click', loadData);
@@ -16,3 +16,4 @@ function loadData() {
     fetchFacts();
     fetchTrivia();
 }
+
