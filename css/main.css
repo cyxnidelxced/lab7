@@ -84,6 +84,13 @@ ul {
     line-height: 1.6;
 }
 
+/* Random Facts Section (Scrollable) */
+#facts-list {
+    max-height: 200px; 
+    overflow-y: auto; 
+    padding-right: 10px; 
+}
+
 /* Buttons */
 button {
     padding: 12px 24px;
