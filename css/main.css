@@ -84,3 +84,57 @@ ul {
     line-height: 1.6;
 }
 
+/* Buttons */
+button {
+    padding: 12px 24px;
+    background-color: #ff4e50;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+    width: 250px; 
+    height: 60px; 
+    display: inline-block; 
+    text-align: center;
+    line-height: 36px; 
+}
+
+/* Hover and Focus Styles */
+button:hover {
+    background-color: #ff6a00;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Show Answer Button */
+#show-answer-btn {
+    background-color: #0077cc;
+    margin-top: 20px; 
+    padding: 12px 24px; 
+    width: 100%; 
+    max-width: 300px; 
+    height: 50px; 
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block; 
+    text-align: center;
+    line-height: 36px; 
+}
+
+#show-answer-btn:hover {
+    background-color: #005fa3;
+    transform: scale(1.05);
+}
+
+#show-answer-btn:focus {
+    outline: none;
+}
